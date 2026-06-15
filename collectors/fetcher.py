@@ -21,7 +21,7 @@ def  fetch_content(url: str, max_chars: int = 5000)-> str:
         resp = requests.get(url, headers=headers, timeout=10)
         resp.raise_for_status()
 
-        soup = BeautifulSoup(resp.text, "html.parse")
+        soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script","style","nav","header"]):
             tag.decompose()
         text = " ".join(soup.get_text(separator=" ").split())

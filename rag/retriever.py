@@ -50,7 +50,7 @@ def build_context(query: str, top_k: int = 5)->str:
 
 if __name__ == "__main__":
     import sys
-    
-    q= " ".join(sys.argv[:1]) or "apa itu RAG"
+
+    q = " ".join(sys.argv[1:]) or "apa itu RAG"
     print(build_context(q))
     

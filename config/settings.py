@@ -9,7 +9,10 @@ load_dotenv()
 
 #-------------Tavily Search--------
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY")
-MAX_RESULTS_PER_TOPIC = int(os.environ.get("MAX_RESULT_PER_TOPIC", 5))
+MAX_RESULTS_PER_TOPIC = int(
+    os.environ.get("MAX_RESULTS_PER_TOPIC")
+    or os.environ.get("MAX_RESULT_PER_TOPIC", 5)
+)
 
 
 #-------------PostgresSQL----------
@@ -22,7 +25,7 @@ DB_CONFIG = {
 }
 
 #---Embedding---
-EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL","your_model_embedding")
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL","all-MiniLM-L6-v2")
 EMBEDDING_DIM = int(os.environ.get("EMBEDDING_DIM", 384))
 
 #---Chunking---
