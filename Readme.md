@@ -106,7 +106,7 @@ python -m rag.retriever "apa itu RAG"
 
 - Model embedding default: `all-MiniLM-L6-v2` (384 dimensi, ringan, jalan
   di CPU). Jika ganti model dengan dimensi berbeda, update juga
-  `EMBEDDING_DIM` di `.env` dan `VECTOR(...)` di `db/schema.sql`.
+  `EMBEDDING_DIM` di `.env` dan `VECTOR(...)` di `database/schema.sql`.
 - Deduplikasi URL disimpan di tabel `processed_urls` agar tidak
   diproses ulang.
 - Free tier Tavily: ~1000 request/bulan — sesuaikan jumlah topik dan
