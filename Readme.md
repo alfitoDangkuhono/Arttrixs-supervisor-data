@@ -9,7 +9,7 @@ Search API), mengubahnya menjadi embedding, dan menyimpannya ke PostgreSQL
 ```
 rag-supervisor/
 ├── config/         konfigurasi (.env, topik, model embedding, dll)
-├── database/             schema SQL & koneksi Postgres
+├── database/       schema SQL & koneksi Postgres
 ├── collectors/     pencarian (Tavily) & fetch konten web
 ├── processing/     chunking & embedding teks
 ├── supervisor/     pipeline utama: search -> chunk -> embed -> simpan
