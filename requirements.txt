@@ -3,3 +3,5 @@ sentence-transformers
 psycopg2-binary
 apscheduler
 python-dotenv
+fastapi
+uvicorn[standard]
