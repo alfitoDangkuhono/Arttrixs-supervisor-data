@@ -34,10 +34,11 @@ async def health():
 async def search(
     query: str = Query(..., min_length=1, description="Kata kunci pencarian"),
     top_k: int = Query(5, ge=1, le=10, description="Jumlah hasil teratas"),
+    context_format: str = Query("text", description="Format konteks: 'text' atau 'json'"),
 ):
     """Mengembalikan hasil pencarian RAG dalam format JSON."""
     results = search_similar(query, top_k=top_k)
-    context = build_context(query, top_k=top_k)
+    context = build_context(query, top_k=top_k, output_format=context_format)
 
     return {
         "query": query,
