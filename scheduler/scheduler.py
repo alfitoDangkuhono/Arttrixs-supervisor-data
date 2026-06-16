@@ -24,10 +24,12 @@ def main():
     scheduler = BlockingScheduler()
     scheduler.add_job(
         run_supervisor,
-        trigger="interval",
-        hours=SCHEDULE_INTERVAL_HOURS,
+        trigger="cron",
+        hour=0,
+        minute=0,
+        second=0,
+        timezone="Asia/Jakarta",
         id="rag_supervisor_job",
-        next_run_time=None
     )
     
     logger.info("Scheduler dimulai. Supervisor akan berjalan setiap %d jam.",SCHEDULE_INTERVAL_HOURS)

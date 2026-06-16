@@ -7,8 +7,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-#-------------Tavily Search--------
+#-------------Search Engine--------
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY")
+BRAVE_API_KEY = os.environ.get("BRAVE_API_KEY")
 MAX_RESULTS_PER_TOPIC = int(
     os.environ.get("MAX_RESULTS_PER_TOPIC")
     or os.environ.get("MAX_RESULT_PER_TOPIC", 5)
@@ -38,7 +39,52 @@ SCHEDULE_INTERVAL_HOURS = int(os.environ.get("SCHEDULE_INTERVAL_HOURS", 1))
 #---Topics yang di pantau supervisor-----
 #bisa di ubah sesuai kebutuhan, atau nanti diganti generator otomatis (LLM)
 TOPICS = [
-    "perkembangan AI terbaru",
-    "framework RAG terbaru",
-    "model embedding open source terbaru"
+    # Olahraga & Berita Terkini
+    "Berita piala dunia terbaru",
+    "Berita teknologi terkini",
+    "Berita bisnis dan startup Indonesia",
+    
+    # AI & Machine Learning
+    "Project AI yang sedang hype",
+    "Artificial Intelligence trends 2026",
+    "Large Language Models dan aplikasinya",
+    "Generative AI terbaru",
+    
+    # Programming & Development
+    "Dokumentasi bahasa pemograma laravel",
+    "Framework JavaScript terbaru",
+    "Python ecosystem dan best practices",
+    "Golang untuk backend development",
+    "Rust programming language",
+    
+    # Web & Cloud
+    "Cloud computing AWS GCP Azure",
+    "Docker dan Kubernetes tutorial",
+    "Microservices architecture",
+    "API design dan REST best practices",
+    
+    # Data & Database
+    "PostgreSQL dan optimization",
+    "Vector database pgvector RAG",
+    "Database design patterns",
+    "Data engineering tools",
+    
+    # DevOps & Tools
+    "CI/CD pipeline automation",
+    "DevOps practices dan tools",
+    "Git workflow dan version control",
+    "Testing automation framework",
+    
+    # Security
+    "Cybersecurity best practices",
+    "Web application security",
+    "API security dan authentication",
+    
+    # Mobile Development
+    "Mobile app development React Native",
+    "Flutter untuk cross-platform apps",
+    
+    # Open Source
+    "Open source projects trending",
+    "GitHub trending repositories",
 ]
